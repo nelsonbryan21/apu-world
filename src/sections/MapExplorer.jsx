@@ -16,19 +16,19 @@ function MapExplorer({ language }) {
 
   return (
     <section className="map-section section-shell" id="mapa">
-      <div className="section-heading map-heading">
+      <div className="section-heading map-heading" data-reveal-stagger>
         <div>
-          <p className="eyebrow"><span className="eyebrow-line" />{isEnglish ? 'A sense of place' : 'Ubícate en el camino'}</p>
-          <h2>{isEnglish ? <>The Andes,<br /><em>at your feet.</em></> : <>Los Andes,<br /><em>a tu alcance.</em></>}</h2>
+          <p className="eyebrow" data-reveal="up"><span className="eyebrow-line" />{isEnglish ? 'A sense of place' : 'Ubícate en el camino'}</p>
+          <h2 data-reveal="title">{isEnglish ? <>The Andes,<br /><em>at your feet.</em></> : <>Los Andes,<br /><em>a tu alcance.</em></>}</h2>
         </div>
-        <p className="section-intro">
+        <p className="section-intro" data-reveal="up">
           {isEnglish
             ? 'Tap a landmark to see where each journey begins, how to get there and what the altitude feels like.'
             : 'Explora cada punto para conocer su ubicación, cómo llegar y qué esperar de la altura.'}
         </p>
       </div>
       <div className="map-explorer">
-        <div className="map-canvas" aria-label={isEnglish ? 'Interactive map of routes in the Cusco region' : 'Mapa interactivo de rutas de la región de Cusco'}>
+        <div className="map-canvas" data-reveal="image" aria-label={isEnglish ? 'Interactive map of routes in the Cusco region' : 'Mapa interactivo de rutas de la región de Cusco'}>
           <svg className="map-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <path d="M43 58 C36 48 33 41 29 36 C25 39 19 46 14 53" />
             <path d="M43 58 C47 62 54 68 71 69" />
@@ -55,15 +55,15 @@ function MapExplorer({ language }) {
           ))}
           <span className="map-scale">{isEnglish ? 'CUSCO REGION · NOT TO SCALE' : 'REGIÓN CUSCO · MAPA REFERENCIAL'}</span>
         </div>
-        <article className="map-detail-card" aria-live="polite">
-          <div className="map-detail-image">
-            <img src={selectedRoute.image} alt="" />
+        <article className="map-detail-card" aria-live="polite" data-reveal-stagger>
+          <div className="map-detail-image" data-reveal="image">
+            <img src={selectedRoute.image} alt="" data-parallax="0.04" />
             <span className="map-altitude">{selectedRoute.altitude}</span>
           </div>
-          <div className="map-detail-copy">
+          <div className="map-detail-copy" data-reveal-stagger>
             <p className="eyebrow"><span className="eyebrow-line" />{isEnglish ? 'Selected destination' : 'Destino seleccionado'}</p>
-            <h3>{selectedRoute.title[language]}</h3>
-            <p>{selectedRoute.description[language]}</p>
+            <h3 data-reveal="title">{selectedRoute.title[language]}</h3>
+            <p data-reveal="up">{selectedRoute.description[language]}</p>
             <dl className="map-facts">
               <div><dt>{isEnglish ? 'Transfer' : 'Traslado'}</dt><dd>{selectedRoute.transfer[language]}</dd></div>
               <div><dt>{isEnglish ? 'Access' : 'Acceso'}</dt><dd>{selectedRoute.access[language]}</dd></div>

@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="535" height="289">
+<path style="fill:#5b5b5d; stroke:none;" d="M0 0L0 289L5 289L5 0L0 0z"/>
+<path style="fill:#ff0101; stroke:none;" d="M5 0L5 289L183 289L183 0L5 0z"/>
+<path style="fill:#d56543; stroke:none;" d="M183 0L183 289L184 289L184 85L184 26L183 0z"/>
+<path style="fill:#ffffff; stroke:none;" d="M184 0L184 289L358 289L358 0L184 0z"/>
+<path style="fill:#ff0101; stroke:none;" d="M358 0L358 289L534 289L534 0L358 0z"/>
+<path style="fill:#ffd3d3; stroke:none;" d="M534 0L534 289L535 289L535 85L535 26L534 0z"/>
+</svg>

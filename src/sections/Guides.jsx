@@ -34,12 +34,12 @@ function Guides({ language }) {
   return (
     <section className="guides-section" id="guias">
       <div className="guides-shell">
-        <div className="guides-heading">
+        <div className="guides-heading" data-reveal-stagger>
           <div>
-            <p className="eyebrow eyebrow-light"><span className="eyebrow-line" />{isEnglish ? 'People of the mountains' : 'Gente de montaña'}</p>
-            <h2>{isEnglish ? <>The best stories<br />have <em>a guide.</em></> : <>Las mejores historias<br />tienen <em>guía.</em></>}</h2>
+            <p className="eyebrow eyebrow-light" data-reveal="up"><span className="eyebrow-line" />{isEnglish ? 'People of the mountains' : 'Gente de montaña'}</p>
+            <h2 data-reveal="title">{isEnglish ? <>The best stories<br />have <em>a guide.</em></> : <>Las mejores historias<br />tienen <em>guía.</em></>}</h2>
           </div>
-          <p>
+          <p data-reveal="up">
             {isEnglish
               ? 'Our guides are not just leading the way. They are sharing the place they call home.'
               : 'Nuestros guías no solo conocen el camino: comparten el lugar que llaman hogar.'}
@@ -47,22 +47,22 @@ function Guides({ language }) {
         </div>
         <div className="guides-grid">
           {guides.map((guide) => (
-            <article className="guide-card" key={guide.id}>
+            <article className="guide-card" key={guide.id} data-reveal-stagger>
               <div className="guide-photo-wrap">
-                <img src={guide.photo} alt={isEnglish ? `${guide.name}, Apu World Travel guide` : `${guide.name}, guía de Apu World Travel`} loading="lazy" />
+                <img src={guide.photo} alt={isEnglish ? `${guide.name}, Apu World Travel guide` : `${guide.name}, guía de Apu World Travel`} loading="lazy" data-reveal="image" data-parallax="0.05" />
                 <span className="guide-number">{guide.number} / {isEnglish ? 'GUIDE' : 'GUÍA'}</span>
               </div>
               <div className="guide-details">
-                <p className="guide-role">{guide.role[language]}</p>
-                <h3>{guide.name}</h3>
-                <p className="guide-bio">{guide.bio[language]}</p>
-                <ul className="guide-traits">
-                  {guide.traits[language].map((trait) => <li key={trait}>{trait}</li>)}
+                <p className="guide-role" data-reveal="up">{guide.role[language]}</p>
+                <h3 data-reveal="title">{guide.name}</h3>
+                <p className="guide-bio" data-reveal="up">{guide.bio[language]}</p>
+                <ul className="guide-traits" data-reveal-stagger>
+                  {guide.traits[language].map((trait) => <li key={trait} data-reveal="up">{trait}</li>)}
                 </ul>
               </div>
             </article>
           ))}
-          <aside className="guide-note">
+          <aside className="guide-note" data-reveal="up">
             <span aria-hidden="true">✳</span>
             <p>{isEnglish ? 'A good guide doesn’t just show you the way. They help you feel you belong.' : 'Un buen guía no solo te muestra el camino. Te ayuda a sentir que perteneces.'}</p>
             <small>{isEnglish ? 'THE APU PROMISE' : 'EL COMPROMISO APU'}</small>

@@ -1,0 +1,50 @@
+
+html.has-scroll-reveal [data-reveal] {
+  transition-delay: var(--reveal-delay, 0ms);
+  transition-duration: 1250ms;
+  transition-timing-function:
+    cubic-bezier(0.80, 1, 0.50, 1);
+}
+
+html.has-scroll-reveal [data-reveal='up'] {
+  opacity: 0;
+  transform: translateY(42px);
+  transition-property: opacity, transform;
+}
+
+html.has-scroll-reveal [data-reveal='title'] {
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  transform: translateY(22px);
+  transition-property: clip-path, opacity, transform;
+  transition-duration: 1550ms, 1200ms, 1400ms;
+}
+
+html.has-scroll-reveal [data-reveal='image'] {
+  clip-path: inset(30% 0);
+  opacity: 0;
+  transform: scale(1.12);
+  transition-property: clip-path, opacity, transform;
+  transition-duration: 1850ms, 1250ms, 1550ms;
+}
+
+html.has-scroll-reveal [data-reveal].is-revealed {
+  clip-path: inset(0);
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.has-scroll-reveal [data-reveal] {
+    transition-property: opacity !important;
+    transition-duration: 860ms !important;
+    transition-delay: var(--reveal-delay, 0ms) !important;
+    clip-path: none !important;
+    transform: none !important;
+  }
+
+  html.has-scroll-reveal [data-reveal].is-revealed {
+    opacity: 1 !important;
+  }
+}
+

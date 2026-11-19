@@ -41,7 +41,7 @@ function RouteDialog({ route, language, onClose }) {
         if (event.target === dialogRef.current) dialogRef.current.close()
       }}
     >
-      <div className="dialog-image" style={{ backgroundImage: `url("${route.image}")` }}>
+      <div className="dialog-image" data-reveal="image" style={{ backgroundImage: `url("${route.image}")` }}>
         <button
           className="dialog-close"
           type="button"
@@ -52,10 +52,10 @@ function RouteDialog({ route, language, onClose }) {
         </button>
         <span className="dialog-image-caption">{route.altitude} · {route.duration[language]}</span>
       </div>
-      <div className="dialog-content">
+      <div className="dialog-content" data-reveal-stagger>
         <p className="eyebrow"><span className="eyebrow-line" />{isEnglish ? 'The journey, step by step' : 'El recorrido, paso a paso'}</p>
-        <h2>{route.title[language]}</h2>
-        <p className="dialog-description">{route.description[language]}</p>
+        <h2 data-reveal="title">{route.title[language]}</h2>
+        <p className="dialog-description" data-reveal="up">{route.description[language]}</p>
         <div className="route-facts dialog-facts">
           <span><small>{isEnglish ? 'Difficulty' : 'Dificultad'}</small>{route.difficulty[language]}</span>
           <span><small>{isEnglish ? 'Transfer' : 'Traslado'}</small>{route.transfer[language]}</span>
@@ -86,18 +86,18 @@ function Routes({ language }) {
 
   return (
     <section className="routes-section section-shell" id="rutas">
-      <div className="section-heading routes-heading">
+      <div className="section-heading routes-heading" data-reveal-stagger>
         <div>
-          <p className="eyebrow"><span className="eyebrow-line" />{isEnglish ? 'Find your way' : 'Encuentra tu camino'}</p>
-          <h2>{isEnglish ? <>Routes that stay<br /><em>with you.</em></> : <>Rutas que se quedan<br /><em>contigo.</em></>}</h2>
+          <p className="eyebrow" data-reveal="up"><span className="eyebrow-line" />{isEnglish ? 'Find your way' : 'Encuentra tu camino'}</p>
+          <h2 data-reveal="title">{isEnglish ? <>Routes that stay<br /><em>with you.</em></> : <>Rutas que se quedan<br /><em>contigo.</em></>}</h2>
         </div>
-        <p className="section-intro">
+        <p className="section-intro" data-reveal="up">
           {isEnglish
             ? 'From ancient pathways to high mountain passes, choose a journey that feels like yours.'
             : 'De caminos ancestrales a pasos de alta montaña: elige un viaje que se sienta tuyo.'}
         </p>
       </div>
-      <div className="route-filters" role="group" aria-label={isEnglish ? 'Filter routes' : 'Filtrar rutas'}>
+      <div className="route-filters" role="group" aria-label={isEnglish ? 'Filter routes' : 'Filtrar rutas'} data-reveal-stagger>
         {routeCategories.map((category) => (
           <button
             type="button"
@@ -109,25 +109,25 @@ function Routes({ language }) {
             {categoryLabels[language][category]}
           </button>
         ))}
-        <span className="route-count">{String(visibleRoutes.length).padStart(2, '0')} {isEnglish ? 'journeys' : 'rutas'}</span>
+        <span className="route-count" data-reveal="up">{String(visibleRoutes.length).padStart(2, '0')} {isEnglish ? 'journeys' : 'rutas'}</span>
       </div>
       <div className="routes-grid">
         {visibleRoutes.map((route, index) => (
-          <article className={`route-card${index === 0 && activeCategory === 'all' ? ' route-card-featured' : ''}`} key={route.id}>
-            <div className="route-card-image">
-              <img src={route.image} alt="" loading="lazy" />
+          <article className={`route-card${index === 0 && activeCategory === 'all' ? ' route-card-featured' : ''}`} key={route.id} data-reveal-stagger>
+            <div className="route-card-image" data-reveal="image">
+              <img src={route.image} alt="" loading="lazy" data-parallax="0.045" />
               <span className="route-image-index">{String(routes.indexOf(route) + 1).padStart(2, '0')}</span>
               <span className="route-category-label">{categoryLabels[language][route.category]}</span>
             </div>
             <div className="route-card-body">
-              <h3>{route.title[language]}</h3>
-              <p>{route.description[language]}</p>
-              <div className="route-facts">
+              <h3 data-reveal="title">{route.title[language]}</h3>
+              <p data-reveal="up">{route.description[language]}</p>
+              <div className="route-facts" data-reveal="up">
                 <span><small>{isEnglish ? 'Altitude' : 'Altitud'}</small>{route.altitude}</span>
                 <span><small>{isEnglish ? 'Duration' : 'Duración'}</small>{route.duration[language]}</span>
                 <span><small>{isEnglish ? 'Level' : 'Nivel'}</small>{route.difficulty[language]}</span>
               </div>
-              <button className="route-detail-button" type="button" onClick={() => setSelectedRoute(route)}>
+              <button className="route-detail-button" type="button" data-reveal="up" onClick={() => setSelectedRoute(route)}>
                 {isEnglish ? 'Explore itinerary' : 'Ver recorrido'} <span aria-hidden="true">↗</span>
               </button>
             </div>

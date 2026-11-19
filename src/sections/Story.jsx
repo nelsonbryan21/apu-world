@@ -6,26 +6,26 @@ function Story({ language }) {
   return (
     <section className="story-section section-shell" id="esencia">
       <div className="story-image-wrap">
-        <img src={storyImage} alt={isEnglish ? 'Ancient stonework in the Andes' : 'Piedra ancestral en los Andes'} />
-        <div className="image-caption">
+        <img data-reveal="image" data-parallax="0.055" src={storyImage} alt={isEnglish ? 'Ancient stonework in the Andes' : 'Piedra ancestral en los Andes'} />
+        <div className="image-caption" data-reveal="up">
           <span className="caption-mark" aria-hidden="true">✳</span>
           <span>{isEnglish ? 'A land of many layers' : 'Una tierra de muchas capas'}</span>
         </div>
       </div>
-      <div className="story-copy">
-        <p className="eyebrow"><span className="eyebrow-line" />{isEnglish ? 'Our spirit' : 'Nuestra esencia'}</p>
-        <h2>
+      <div className="story-copy" data-reveal-stagger>
+        <p className="eyebrow" data-reveal="up"><span className="eyebrow-line" />{isEnglish ? 'Our spirit' : 'Nuestra esencia'}</p>
+        <h2 data-reveal="title">
           {isEnglish
             ? <>We travel with<br />our <em>roots showing.</em></>
             : <>Viajamos con<br />las raíces <em>a la vista.</em></>}
         </h2>
-        <p className="story-intro">
+        <p className="story-intro" data-reveal="up">
           {isEnglish
             ? 'Apu means mountain spirit. It is also our promise: to guide you with respect, curiosity and the warmth of a local welcome.'
             : 'Apu significa espíritu de la montaña. También es nuestra promesa: acompañarte con respeto, curiosidad y la calidez de quien te recibe en casa.'}
         </p>
-        <div className="mission-vision">
-          <article>
+        <div className="mission-vision" data-reveal-stagger>
+          <article data-reveal="up">
             <span className="small-index">01 / {isEnglish ? 'PURPOSE' : 'PROPÓSITO'}</span>
             <h3>{isEnglish ? 'Our mission' : 'Nuestra misión'}</h3>
             <p>
@@ -34,7 +34,7 @@ function Story({ language }) {
                 : 'Crear viajes conscientes que conecten a las personas con la cultura andina y las comunidades que la mantienen viva.'}
             </p>
           </article>
-          <article>
+          <article data-reveal="up">
             <span className="small-index">02 / {isEnglish ? 'HORIZON' : 'HORIZONTE'}</span>
             <h3>{isEnglish ? 'Our vision' : 'Nuestra visión'}</h3>
             <p>
@@ -44,7 +44,7 @@ function Story({ language }) {
             </p>
           </article>
         </div>
-        <a className="text-link" href="#contacto">
+        <a className="text-link" href="#contacto" data-reveal="up">
           {isEnglish ? 'Get to know us' : 'Conversemos'} <span aria-hidden="true">↗</span>
         </a>
       </div>

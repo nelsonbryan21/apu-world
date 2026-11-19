@@ -15,21 +15,21 @@ function Gallery({ language }) {
 
   return (
     <section className="gallery-section section-shell" id="galeria">
-      <div className="section-heading gallery-heading">
+      <div className="section-heading gallery-heading" data-reveal-stagger>
         <div>
-          <p className="eyebrow"><span className="eyebrow-line" />{isEnglish ? 'Field notes' : 'Notas de viaje'}</p>
-          <h2>{isEnglish ? <>A little closer<br />to <em>the feeling.</em></> : <>Un poco más cerca<br />de <em>sentirlo.</em></>}</h2>
+          <p className="eyebrow" data-reveal="up"><span className="eyebrow-line" />{isEnglish ? 'Field notes' : 'Notas de viaje'}</p>
+          <h2 data-reveal="title">{isEnglish ? <>A little closer<br />to <em>the feeling.</em></> : <>Un poco más cerca<br />de <em>sentirlo.</em></>}</h2>
         </div>
-        <p className="section-intro">
+        <p className="section-intro" data-reveal="up">
           {isEnglish
             ? 'Some moments are hard to describe. We’ll let these do the talking.'
             : 'Hay momentos difíciles de explicar. Dejamos que las imágenes hablen.'}
         </p>
       </div>
-      <div className="gallery-grid">
+      <div className="gallery-grid" data-reveal-stagger>
         {moments.map((moment, index) => (
-          <figure className={`gallery-tile ${moment.className}`} key={moment.title.es} tabIndex="0">
-            <img src={moment.image} alt={moment.title[language]} loading="lazy" />
+          <figure className={`gallery-tile ${moment.className}`} key={moment.title.es} tabIndex="0" data-reveal="image">
+            <img src={moment.image} alt={moment.title[language]} loading="lazy" data-parallax="0.05" />
             <figcaption>
               <span>0{index + 1} / {moment.title[language]}</span>
               <span aria-hidden="true">↗</span>

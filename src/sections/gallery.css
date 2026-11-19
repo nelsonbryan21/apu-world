@@ -1,0 +1,108 @@
+.gallery-section {
+  padding-top: 116px;
+  padding-bottom: 128px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.85fr 0.85fr;
+  grid-template-rows: 226px 210px;
+  gap: 14px;
+  margin-top: 44px;
+}
+
+.gallery-tile {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #88948b;
+  cursor: default;
+}
+
+.gallery-tile.gallery-tall {
+  grid-row: span 2;
+}
+
+.gallery-tile.gallery-wide {
+  grid-column: span 2;
+}
+
+.gallery-tile::after {
+  position: absolute;
+  inset: 48% 0 0;
+  background: linear-gradient(0deg, rgba(7, 29, 38, 0.68), transparent);
+  content: '';
+  pointer-events: none;
+}
+
+.gallery-tile img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center calc(50% + var(--parallax-y, 0px));
+  transition: transform 700ms cubic-bezier(0.23, 1, 0.32, 1), filter 350ms ease-out;
+}
+
+.gallery-tile:hover img, .gallery-tile:focus-visible img {
+  filter: saturate(1.08);
+  transform: scale(1.06);
+}
+
+.gallery-tile figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 18px;
+  bottom: 16px;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--paper);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gallery-tile figcaption span:last-child {
+  color: var(--champagne);
+  font-size: 16px;
+  transition: transform 180ms ease-out;
+}
+
+.gallery-tile:hover figcaption span:last-child, .gallery-tile:focus-visible figcaption span:last-child {
+  transform: translate(3px, -2px);
+}
+
+@media (max-width: 700px) {
+
+  .gallery-section {
+    padding-top: 80px;
+    padding-bottom: 84px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 245px 155px 155px;
+    gap: 9px;
+    margin-top: 29px;
+  }
+
+  .gallery-tile.gallery-tall {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .gallery-tile.gallery-wide {
+    grid-column: span 2;
+  }
+
+  .gallery-tile figcaption {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+}

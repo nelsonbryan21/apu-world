@@ -1,0 +1,250 @@
+.guides-heading h2 {
+  margin: 20px 0 0;
+  font-family: var(--serif);
+  font-size: clamp(60px, 8.5vw, 112px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.86;
+  text-wrap: balance;
+}
+
+.guides-heading h2 em {
+  color: var(--champagne);
+  font-weight: 400;
+}
+
+.guides-heading h2 {
+  margin-top: 19px;
+  font-size: clamp(48px, 5.2vw, 70px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.guides-section {
+  padding: 108px 0 116px;
+  background: var(--ocean);
+  color: var(--paper);
+}
+
+.guides-shell {
+  width: min(1200px, calc(100% - 80px));
+  margin: auto;
+}
+
+.guides-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+.guides-heading h2 {
+  color: var(--paper);
+}
+
+.guides-heading > p {
+  max-width: 320px;
+  padding-bottom: 7px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.guides-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.72fr;
+  align-items: stretch;
+  gap: 22px;
+  margin-top: 46px;
+}
+
+.guide-card {
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.guide-photo-wrap {
+  position: relative;
+  height: 275px;
+  overflow: hidden;
+  background: #526a67;
+}
+
+.guide-photo-wrap::after {
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(0deg, rgba(6, 29, 36, 0.55), transparent);
+  content: '';
+}
+
+.guide-photo-wrap img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center calc(39% + var(--parallax-y, 0px));
+  filter: saturate(0.78);
+  transition: transform 650ms cubic-bezier(0.23, 1, 0.32, 1), filter 350ms ease-out;
+}
+
+.guide-card:hover .guide-photo-wrap img {
+  filter: saturate(1);
+  transform: scale(1.035);
+}
+
+.guide-number {
+  position: absolute;
+  z-index: 1;
+  bottom: 16px;
+  left: 18px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+
+.guide-details {
+  padding: 21px 20px 22px;
+}
+
+.guide-role {
+  color: var(--champagne);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.guide-details h3 {
+  margin: 8px 0 0;
+  color: var(--paper);
+  font-family: var(--serif);
+  font-size: 27px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.guide-bio {
+  min-height: 61px;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+.guide-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 17px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-traits li {
+  padding: 7px 9px;
+  border: 1px solid var(--line-light);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 8px;
+  letter-spacing: 0.02em;
+}
+
+.guide-note {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 24px;
+  border: 1px solid rgba(201, 174, 130, 0.34);
+}
+
+.guide-note > span {
+  color: var(--champagne);
+  font-size: 28px;
+}
+
+.guide-note p {
+  margin-top: 20px;
+  color: var(--paper);
+  font-family: var(--serif);
+  font-size: 25px;
+  line-height: 1.2;
+  text-wrap: pretty;
+}
+
+.guide-note small {
+  margin-top: 28px;
+  color: var(--champagne);
+  font-size: 8px;
+  letter-spacing: 0.17em;
+}
+
+@media (max-width: 1000px) {
+  .guides-shell {
+    width: calc(100% - 56px);
+  }
+
+  .guides-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .guide-note {
+    grid-column: span 2;
+    min-height: 210px;
+    padding: 27px 32px;
+  }
+
+  .guide-note p {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .guides-shell {
+    width: calc(100% - 40px);
+  }
+
+  .guides-heading h2 {
+    font-size: clamp(46px, 12vw, 62px);
+  }
+
+  .guides-heading {
+    display: block;
+  }
+
+  .guides-heading > p {
+    margin-top: 18px;
+    font-size: 11px;
+  }
+
+  .guides-section {
+    padding: 78px 0 82px;
+  }
+
+  .guides-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 29px;
+  }
+
+  .guide-photo-wrap {
+    height: min(76vw, 310px);
+  }
+
+  .guide-details {
+    padding: 18px 18px 19px;
+  }
+
+  .guide-bio {
+    min-height: 0;
+  }
+
+  .guide-note {
+    grid-column: auto;
+    min-height: 190px;
+    padding: 23px;
+  }
+
+  .guide-note p {
+    max-width: 310px;
+    font-size: 23px;
+  }
+}
