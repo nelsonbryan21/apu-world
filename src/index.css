@@ -1,0 +1,9 @@
+#root {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+::selection {
+  background: rgba(201, 174, 130, 0.42);
+  color: #0b2938;
+}
